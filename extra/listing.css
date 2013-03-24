@@ -3,12 +3,7 @@
  */
 
 .listing {
-	margin: 0;
 	width: 100%;
-}
-
-.listing > li {
-	list-style: none;
 	white-space: nowrap;
 }
 
@@ -18,7 +13,7 @@
 
 @media (min-width: 980px) {
 	/* Regular desktops. */
-	ul.listing > li > div {
+	div.listing > div {
 		display: inline-block;
 		vertical-align: top;
 	}

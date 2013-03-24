@@ -6,11 +6,9 @@ use strict;
 use IPC::Open2;
 
 sub beg {
-	print "\n<ul class=\"listing\">\n";
 }
 
 sub end {
-	print "</ul>\n";
 }
 
 sub md {
@@ -24,11 +22,11 @@ sub md {
 
 sub line {
 	my $h = shift;
-	print "<li><div class=\"descr\">";
+	print "<div class=\"listing\"><div class=\"descr\">";
 	print md($h->{'d'});
 	print "</div><div class=\"code\">\n<pre><code>";
 	print $h->{'c'};
-	print "</code></pre>\n</div></li>\n";
+	print "</code></pre>\n</div></div>\n";
 	$h->{'c'} = "";
 	$h->{'d'} = "";
 	$h->{'n'}++;
