@@ -1,8 +1,8 @@
 ## Code 0: Foundations
 
-Here we use the knowledge we have of the ABI from the last article to describe what is the critical information one needs to have in a C structure representing a thread, then use this "program state" to interrupt and resume control flow of independent logical processes.
+Here we use the knowledge we have of the ABI from the last article to describe what is the critical information needed to represent a thread. Then we use this "program state" to interrupt and resume control flow of independent logical processes still while in C.
 
-You can find a git repository containing the code described here in the branch [code0](https://github.com/mpu/gthreads/tree/code0) of the Github repository.
+You can find a git repository containing the code described here in the branch [code0](https://github.com/mpu/gthreads/tree/code0) of the Github repository. A Makefile is included and should work on any platform having the GNU compilation toolkit installed.
 
 ### Annotated listing (gthr.c)
 
@@ -172,7 +172,7 @@ Finding an unused slot is a simple matter of linear search; if no slot is availa
 
 The stack is allocated via the regular C `malloc` function &mdash; remember that the stack is a simple block of memory.
 
-What happens next is a bit tricky, we want the thread to start executing the function `f` when it will be scheduled. Since rip is not present in a context structure, we must use a trick. The address of `f` will be used as return address for `gswtch` in the thread stack. This way we will "return" directly into `f` after the first context switch!
+What happens next is a bit tricky, we want the thread to start executing the function `f` when it will be scheduled. Since rip is not present in a context structure, we must use a trick. What we do is push the address of `f` on top of the stack &mdash; this way it will be used as return address for `gtswtch` and cause the desired jump. We will "return" directly into `f` after the first context switch!
 
 If `f` returns, we don't want any bad thing to happen so we make the CPU return into `gtstop`. This function defined above will simply call `gtret` which will yield control to another thread and never return.
 
