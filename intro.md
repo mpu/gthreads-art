@@ -4,9 +4,9 @@ Green threads or userland threads (depending on your generation) provide high ef
 
 I will try to make this tutorial self contained and with very few prerequisites. During the course of my explanations, you will have the occasion to implement your own green thread machinery for C on the x86-64 architecture.
 
-I provide a [reference implementation](http://github.com/mpu/gthreads) hosted by Github so you can play with working code. This tutorial is divided in small sections &mdash; some parts correspond to branches in the git repository, their title start with "Code" followed by a number. For instance, "Code 0" will correspond to the code0 branch.
+I provide a [reference implementation](https://github.com/mpu/gthreads) hosted by Github so you can play with working code. This tutorial is divided in small sections &mdash; some parts correspond to branches in the git repository, their title start with "Code" followed by a number. For instance, "Code 0" will correspond to the code0 branch.
 
-If you find any typo or have any suggestion about this tutorial, you can fill an [issue](https://github.com/mpu/gthreads-art/issues/new) on the [Github page of the tutorial](http://github.com/mpu/gthreads-art). Even better, if you want to make some modifications: fork the tutorial's repository and submit a pull request, I will be glad to integrate it here.
+If you find any typo or have any suggestion about this tutorial, you can fill an [issue](https://github.com/mpu/gthreads-art/issues/new) on the [Github page of the tutorial](https://github.com/mpu/gthreads-art). Even better, if you want to make some modifications: fork the tutorial's repository and submit a pull request, I will be glad to integrate it here.
 
 The full tutorial is not yet complete since I am not sure what I want to develop after having presented the base. The plan is to investigate and develop more topics once I get feedback from you for the first parts. Going through current implementations' code is also an alternative for further articles.
 

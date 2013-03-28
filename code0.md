@@ -1,8 +1,8 @@
 ## Code 0: Foundations
 
-Here we use the knowledge we have of the ABI from the last article to describe what is the critical information needed to represent a thread. Then we use this "program state" to interrupt and resume control flow of independent logical processes still while in C.
+Here we dive into the code to get a very small but effective implementation of green threads. We will use the knowledge of the ABI to craft a data structure representing an execution thread. This structure will then be used to interrupt and restore the control flow hence providing the base building block to get working user threads.
 
-You can find a git repository containing the code described here in the branch [code0](https://github.com/mpu/gthreads/tree/code0) of the Github repository. A Makefile is included and should work on any platform having the GNU compilation toolkit installed.
+The code described here can be found in the [code0](https://github.com/mpu/gthreads/tree/code0) branch of the Github repository. A Makefile is included and should work on any platform having the GNU compilation toolkit installed.
 
 ### Annotated listing (gthr.c)
 
@@ -30,7 +30,7 @@ enum {
 };
 
 !descr
-This is getting serious, the structure gt describes what a green thread is from the threading library's point of view. The `ctx` member of a context captures a CPU state. This member can be seen as a frozen execution context for the thread so it is meaningful only when the thread is in state `Ready`. You might have noticed that only callee save registers appear in a context;  more details about this will be given in `gtswtch` below.
+This is getting serious, the structure gt describes what a green thread is from the threading library's point of view. The `ctx` member of a thread structure captures a CPU state. This member can be seen as a frozen execution context for the thread so it is meaningful only when the thread is in state `Ready`. You might have noticed that only callee save registers appear in a context;  more details about this will be given in `gtswtch` below.
 
 For the time being, a thread structure can be in three states.
 
