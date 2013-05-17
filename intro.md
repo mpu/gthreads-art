@@ -1,6 +1,6 @@
 ## Introduction
 
-Green threads or userland threads (depending on your generation) provide high efficiency concurrency in a lot of mainstream languages. To only cite a few, CPython (via external libraries), Haskell, Go, and Erlang are users of this technique. This series of short articles will expose the core ideas that rule this concurrency primitive.
+Green threads or userland threads (depending on your generation) provide high efficiency concurrency in a lot of mainstream languages. To only cite a few, CPython (via external libraries), Haskell, Go and Erlang are users of this technique. This series of short articles will expose the core ideas that rule this concurrency primitive.
 
 I will try to make this tutorial self contained and with very few prerequisites. During the course of my explanations, you will have the occasion to implement your own green thread machinery for C on the x86-64 architecture.
 
