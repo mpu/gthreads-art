@@ -13,7 +13,7 @@ Markdown language so even if files here end in ".md", Github
 will not be able to render them all properly.
 
 The tutorial is now
-[published](http://c9x.me/gthreads/intro.html).
+[published](http://c9x.me/art/gthreads/intro.html).
 
 ## Legal matter
 
