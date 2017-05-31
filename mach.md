@@ -6,7 +6,7 @@ Before jumping into the implementation I need to make sure you know the basics o
 
 ### Basic architecture features
 
-This architecture features a set of 16 registers (rax, rbx, rcx, rdx, rsi, rdi, rbp, rsp, rip, r8, r9, r10, r12, r13, r14, r15) which can store 64-bits numbers. They can be seen as global programming language variables stored in the CPU; contrary to C variables they come only in a fixed number! Moreover some of them are reserved for special purposes.
+This architecture features a set of 16 registers (rax, rbx, rcx, rdx, rsi, rdi, rbp, rsp, rip, r8, r9, r10, r11, r12, r13, r14, r15) which can store 64-bits numbers. They can be seen as global programming language variables stored in the CPU; contrary to C variables they come only in a fixed number! Moreover some of them are reserved for special purposes.
 
   * The **rip** register, also called *instruction pointer* or *program counter*. This register cannot be manipulated directly by machine instructions, it is dedicated to store the memory address of the next instruction to be executed.
   * The **rsp** register, also called *stack pointer*. All modern computers feature a stack that is used when calling and returning from functions, it is also used by C compilers to store automatic storage class variables.
